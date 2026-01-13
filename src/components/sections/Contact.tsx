@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Phone, MapPin, Calendar, DollarSign, MessageSquare } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin, Calendar, DollarSign, MessageSquare, MessageCircle } from "lucide-react";
 
 export function Contact() {
     const [formData, setFormData] = useState({
@@ -117,6 +117,21 @@ ${formData.name}
                                     <div>
                                         <p className="font-semibold">Phone</p>
                                         <p className="text-muted-foreground">+91 63983 17883</p>
+                                    </div>
+                                </a>
+
+                                <a
+                                    href="https://wa.me/916398317883?text=Hi%20Deepak%2C%20I%27m%20interested%20in%20discussing%20a%20project%20with%20you.%20Could%20we%20schedule%20a%20call%3F"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group flex items-center gap-4 p-4 rounded-2xl border border-border hover:border-green-500/50 hover:bg-green-500/5 transition-all"
+                                >
+                                    <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-all">
+                                        <MessageCircle size={20} />
+                                    </div>
+                                    <div>
+                                        <p className="font-semibold">WhatsApp</p>
+                                        <p className="text-muted-foreground">Quick chat & instant response</p>
                                     </div>
                                 </a>
 

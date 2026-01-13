@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
+import { WhatsAppFloat } from "@/components/ui/whatsapp-float";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Projects />
       <Experience />
       <Contact />
+      <WhatsAppFloat />
 
       <footer className="py-12 text-center text-muted-foreground text-sm border-t border-border bg-card/30">
         <div className="container mx-auto px-6">

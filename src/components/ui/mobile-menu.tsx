@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Download, ArrowUpRight } from "lucide-react";
+import { Menu, X, Download, ArrowUpRight, MessageCircle } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 
 export function MobileMenu() {
@@ -78,6 +78,17 @@ export function MobileMenu() {
                                 >
                                     <span className="font-medium">Download Resume</span>
                                     <Download size={16} />
+                                </a>
+
+                                <a
+                                    href="https://wa.me/916398317883?text=Hi%20Deepak%2C%20I%27m%20interested%20in%20discussing%20a%20project%20with%20you.%20Could%20we%20schedule%20a%20call%3F"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={handleLinkClick}
+                                    className="flex items-center justify-between w-full p-3 bg-green-500/10 text-green-600 rounded-xl hover:bg-green-500/20 transition-colors"
+                                >
+                                    <span className="font-medium">WhatsApp Chat</span>
+                                    <MessageCircle size={16} />
                                 </a>
 
                                 <a
