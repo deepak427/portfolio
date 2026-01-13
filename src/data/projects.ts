@@ -98,7 +98,7 @@ export const projects: Project[] = [
     stats: "Google AI Hackathon",
     tags: ["Google ADK", "Gemini", "Vertex AI", "Python", "ML"],
     gradient: "bg-green-600",
-    link: "#",
+    link: "http://luex.shop/",
     image: "/pungda.webp",
     testimonial: {
       text: "An innovative use of satellite data and AI to solve real-world agricultural problems at scale.",

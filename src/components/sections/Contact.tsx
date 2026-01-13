@@ -233,15 +233,14 @@ ${formData.name}
                                 <div>
                                     <label className="block text-sm font-medium text-muted-foreground mb-2">
                                         <MessageSquare size={16} className="inline mr-1" />
-                                        Project Details *
+                                        Project Details
                                     </label>
                                     <textarea
-                                        required
                                         rows={5}
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                         className="w-full bg-background/50 border border-border rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors resize-none"
-                                        placeholder="Tell me about your project, goals, and any specific requirements..."
+                                        placeholder="Tell me about your project, goals, and any specific requirements... (Optional)"
                                     />
                                 </div>
 

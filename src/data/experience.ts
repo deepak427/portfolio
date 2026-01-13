@@ -2,6 +2,20 @@ import { Experience } from "@/types";
 
 export const experiences: Experience[] = [
   {
+    year: "2023 - Present",
+    role: "Freelance Full-Stack Developer",
+    company: "Independent Practice",
+    type: "freelance",
+    details: [
+      "Delivered Nasvi Street Food Festival platform handling 30,000+ concurrent users with zero downtime during peak events",
+      "Built and launched Health Insurance Pathshala mobile app with paid subscription model and 4.5★ Play Store rating",
+      "Developed Kshetra immersive travel platform for Uttarakhand Tourism with 95+ Lighthouse performance score",
+      "Created Veris AI fact-checking platform with 92% accuracy using multi-agent AI architecture",
+      "Engineered Pungda AI Farming Assistant using Google Alpha Earth satellite data and multi-agent systems for yield prediction"
+    ],
+    stack: "React • Node.js • AWS • Mobile Development • AI/ML"
+  },
+  {
     year: "Sep 2025 - Present",
     role: "Backend Engineer (Full-Time)",
     company: "Kilobyte Technologies",
@@ -26,20 +40,6 @@ export const experiences: Experience[] = [
       "Implemented real-time analytics dashboard for business intelligence and performance monitoring"
     ],
     stack: "Redis • OpenAI • Grafana • k6 • Analytics"
-  },
-  {
-    year: "2023 - Present",
-    role: "Freelance Full-Stack Developer",
-    company: "Independent Practice",
-    type: "freelance",
-    details: [
-      "Delivered Nasvi Street Food Festival platform handling 30,000+ concurrent users with zero downtime during peak events",
-      "Built and launched Health Insurance Pathshala mobile app with paid subscription model and 4.5★ Play Store rating",
-      "Developed Kshetra immersive travel platform for Uttarakhand Tourism with 95+ Lighthouse performance score",
-      "Created Veris AI fact-checking platform with 92% accuracy using multi-agent AI architecture",
-      "Engineered Pungda AI Farming Assistant using Google Alpha Earth satellite data and multi-agent systems for yield prediction"
-    ],
-    stack: "React • Node.js • AWS • Mobile Development • AI/ML"
   },
   {
     year: "2022 - 2023",
