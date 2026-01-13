@@ -64,33 +64,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
-  .animate-in-view {
-    animation: subtle-glow 3s ease-in-out infinite alternate;
-  }
-
-  @keyframes subtle-glow {
-    0% {
-      box-shadow: 0 0 20px -10px rgba(59, 130, 246, 0.1);
-    }
-    100% {
-      box-shadow: 0 0 30px -5px rgba(59, 130, 246, 0.2);
-    }
-  }
-
-  /* Only apply animation on mobile/tablet */
-  @media (max-width: 1024px) {
-    .animate-in-view {
-      animation: subtle-glow 4s ease-in-out infinite alternate;
-    }
-  }
-
-  /* Disable animation on devices that can hover */
-  @media (hover: hover) {
-    .animate-in-view {
-      animation: none;
-    }
-  }
 }
 
 body {

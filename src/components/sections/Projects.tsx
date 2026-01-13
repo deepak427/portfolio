@@ -44,7 +44,7 @@ export function Projects() {
                                 project.id === 2 ? 'md:row-span-2 min-h-[400px] md:min-h-[600px]' : // Health Insurance - Tall
                                 project.id === 3 ? 'lg:col-span-2 min-h-[300px] md:min-h-[400px]' : // Kshetra - Wide
                                 'min-h-[300px] md:min-h-[400px]' // Others - Standard
-                            } animate-in-view`}
+                            }`}
                         >
                             <a
                                 href={project.link}
@@ -63,17 +63,14 @@ export function Projects() {
                                         alt={project.title}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        className="object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-700 grayscale-[0.3] group-hover:grayscale-0"
+                                        className="object-cover opacity-70 group-hover:opacity-50 transition-opacity duration-700 grayscale-[0.4] group-hover:grayscale-0"
                                     />
                                 </div>
-                                {/* Luxurious Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 transition-opacity duration-700 group-hover:opacity-80" />
+                                {/* Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-85 group-hover:opacity-75 transition-opacity duration-700" />
 
-                                {/* Subtle color tint for mobile/tablet - always visible with low opacity, stronger on hover */}
-                                <div className={`absolute inset-0 opacity-15 md:opacity-0 md:group-hover:opacity-30 transition-opacity duration-1000 mix-blend-soft-light ${project.gradient}`} />
-                                
-                                {/* Additional subtle overlay for mobile warmth */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-1000" />
+                                {/* Simple color tint - always visible, stronger on hover */}
+                                <div className={`absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity duration-700 mix-blend-soft-light ${project.gradient}`} />
                             </div>
 
                             {/* Content Layer */}
