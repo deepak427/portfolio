@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink, Users, TrendingUp, Award } from "lucide-react";
 import { projects } from "@/data/projects";
 import Image from "next/image";
 
 export function Projects() {
-    const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-
     return (
         <section id="work" className="py-32 bg-background relative z-10">
             <div className="container mx-auto px-6">
@@ -36,9 +34,7 @@ export function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
-                            onHoverStart={() => setHoveredProject(project.id)}
-                            onHoverEnd={() => setHoveredProject(null)}
-                            className={`group relative p-6 md:p-8 rounded-[2rem] border border-white/10 overflow-hidden hover:border-primary/50 transition-all duration-700 flex flex-col justify-between bg-card/40 backdrop-blur-xl shadow-2xl shadow-black/50 ${
+                            className={`group relative p-6 md:p-8 rounded-[2rem] border border-white/10 overflow-hidden hover:border-primary/30 transition-colors duration-300 flex flex-col justify-between bg-card/40 backdrop-blur-xl shadow-2xl shadow-black/50 ${
                                 // Dynamic sizing based on project importance
                                 project.id === 1 ? 'md:col-span-2 md:row-span-2 min-h-[400px] md:min-h-[600px]' : // Nasvi - Large
                                 project.id === 2 ? 'md:row-span-2 min-h-[400px] md:min-h-[600px]' : // Health Insurance - Tall
@@ -56,21 +52,21 @@ export function Projects() {
                             </a>
 
                             {/* Dynamic Background Image */}
-                            <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
+                            <div className="absolute inset-0">
                                 <div className="relative w-full h-full">
                                     <Image
                                         src={project.image}
                                         alt={project.title}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        className="object-cover opacity-70 group-hover:opacity-50 transition-opacity duration-700 grayscale-[0.4] group-hover:grayscale-0"
+                                        className="object-cover opacity-70 group-hover:opacity-60 transition-opacity duration-300 grayscale-[0.3] group-hover:grayscale-0"
                                     />
                                 </div>
-                                {/* Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-85 group-hover:opacity-75 transition-opacity duration-700" />
+                                {/* Simple gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-80" />
 
-                                {/* Simple color tint - always visible, stronger on hover */}
-                                <div className={`absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity duration-700 mix-blend-soft-light ${project.gradient}`} />
+                                {/* Clean color tint - always visible, slightly stronger on hover */}
+                                <div className={`absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-300 ${project.gradient}`} />
                             </div>
 
                             {/* Content Layer */}
@@ -80,22 +76,22 @@ export function Projects() {
                                         {project.stats}
                                     </div>
                                     {project.metrics && (
-                                        <div className="px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-primary/20 border border-primary/20 text-xs font-medium text-primary backdrop-blur-md shadow-[0_0_15px_-3px_rgba(255,255,255,0.3)]">
+                                        <div className="px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-primary/20 border border-primary/20 text-xs font-medium text-primary backdrop-blur-md">
                                             Live
                                         </div>
                                     )}
                                 </div>
-                                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-white/10 bg-black/40 flex items-center justify-center hover:bg-primary hover:text-black hover:border-primary transition-all duration-500 backdrop-blur-md group-hover:scale-110">
+                                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-white/10 bg-black/40 flex items-center justify-center hover:bg-primary hover:text-black hover:border-primary transition-all duration-200 backdrop-blur-md">
                                     <ArrowUpRight size={16} className="md:hidden" />
                                     <ArrowUpRight size={18} className="hidden md:block" />
                                 </div>
                             </div>
 
-                            <div className="relative z-20 pointer-events-none translate-y-2 md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold font-heading mb-2 md:mb-3 text-white leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/70 transition-all">
+                            <div className="relative z-20 pointer-events-none">
+                                <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold font-heading mb-2 md:mb-3 text-white leading-tight">
                                     {project.title}
                                 </h3>
-                                <p className="text-white/60 font-light mb-4 md:mb-6 text-sm md:text-lg line-clamp-3 md:line-clamp-2 leading-relaxed group-hover:text-white/90 transition-colors">
+                                <p className="text-white/70 font-light mb-4 md:mb-6 text-sm md:text-lg line-clamp-3 md:line-clamp-2 leading-relaxed">
                                     {project.description}
                                 </p>
 
@@ -137,7 +133,7 @@ export function Projects() {
 
                                 <div className="flex flex-wrap gap-1.5 md:gap-2">
                                     {project.tags.slice(0, 3).map(tag => (
-                                        <span key={tag} className="text-[10px] md:text-[11px] font-medium tracking-wide text-white/50 bg-white/5 px-2 md:px-3 py-1 md:py-1.5 rounded-full backdrop-blur-md border border-white/5">
+                                        <span key={tag} className="text-[10px] md:text-[11px] font-medium tracking-wide text-white/60 bg-white/10 px-2 md:px-3 py-1 md:py-1.5 rounded-full backdrop-blur-md">
                                             {tag}
                                         </span>
                                     ))}
